@@ -1,0 +1,47 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="top-marquee">
+    <marquee behavior="scroll" direction="left"> {{ marqueeText }} </marquee>
+</div>
+
+
+<!-- preloader end -->
+<div class="preloader" *ngIf="isLoading">
+    <div class="preloader-icon">
+        <img src="assets/logo/logo1.png" alt="loader image">
+    </div>
+</div>
+
+<!-- LOTUS AUDIO BUTTON -->
+<div class="aarti-pill" *ngIf="!isLoading">
+
+    <a href="javascript:void(0);" class="aarti" (click)="toggleAarti()" aria-label="Play Aarti">
+
+        <span class="lotus-glow"></span>
+        <span class="pulse-ring ring1"></span>
+        <span class="pulse-ring ring2"></span>
+
+        <img src="assets/audio/lotus1.png" alt="Lotus" class="aarti-icon">
+
+    </a>
+
+</div>
+
+<!-- AUDIO -->
+<audio #krishnaAarti loop>
+    <source src="assets/audio/jaiambe.mp3" type="audio/mp3">
+</audio>
+<!-- preloader end -->
+
+<!-- back to top start -->
+<!-- <button id="back-top" class="back-to-top" aria-label="back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+</button> -->
+<button type="button" id="back-top" class="back-to-top" [class.show]="showBackToTop" (click)="scrollToTop()"> <i
+        class="fa-solid fa-chevron-up"></i> </button>
+<!-- back to top end -->
+
+<!-- mouse cursor start -->
+<div class="mouse-cursor cursor-outer"></div>
+<div class="mouse-cursor cursor-inner"></div>
+<!-- mouse cursor end -->
+<router-outlet></router-outlet>

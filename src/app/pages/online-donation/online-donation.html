@@ -1,0 +1,332 @@
+<app-navbar></app-navbar>
+
+
+<section class="breadcrumb-section">
+    <!-- breadcrumb wapper start -->
+    <div class="breadcrumb-wapper" style="background-image: url(assets/background/durga.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- breadcrumb content start -->
+                    <div class="breadcrumb-content">
+                        <!-- breadcrumb title start -->
+                        <div class="breadcrumb-title">
+                            <h1>Online Donation</h1>
+                        </div>
+                        <!-- breadcrumb title end -->
+                        <!-- nav start -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Online Donation</li>
+                            </ol>
+                        </nav>
+                        <!-- nav end -->
+                    </div>
+                    <!-- breadcrumb content end -->
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb-shape-bottom">
+            <figure>
+                <img src="assets/shape/shape.png" alt="breadcrumb shape">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="donate-section-1 pt-100 md-pt-80 md-pb-50 pb-50">
+    <!-- <div class="donate-image">
+        <figure>
+            <img src="assets/donate/donate-1.jpg" alt="donate image">
+        </figure>
+    </div> -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- <div class="col-lg-4">
+                <img src="assets/gallery/g10.png" alt="">
+            </div> -->
+            <div class="col-lg-8">
+                <div class="donate-right">
+                    <!-- section title start -->
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                        <span class="sub-title">Shree Shakti Mandir</span>
+                        <h2>Ways To Donate</h2>
+                        <p>
+                            Make a contribution today and help us continue serving the community
+                            through spiritual, cultural, and charitable initiatives.
+                        </p>
+                    </div>
+                    <!-- section title end -->
+                    <!-- default-form start -->
+                    <div class="default-form donate-form wow fadeInUp" data-wow-delay=".3s">
+                        <p class="donate-form-title text-center">Make Donation</p>
+                        <form action="#" [formGroup]="donationForm">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label for="firstname">First Name *</label>
+                                            <input class="form-control" id="firstname" name="firstname" type="text"
+                                                placeholder="First Name Here" autocomplete="off" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label for="lastname">Last Name *</label>
+                                            <input class="form-control" id="lastname" name="lastname" type="text"
+                                                placeholder="Last Name Here" autocomplete="off" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label for="email">Email *</label>
+                                            <input class="form-control" id="email" name="email" type="email"
+                                                placeholder="Email Here" autocomplete="off" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label for="phone">Phone Number *</label>
+                                            <input class="form-control" id="phone" name="phone" type="text"
+                                                placeholder="Phone Number Here" autocomplete="off" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label for="address">Address *</label>
+                                            <input class="form-control" id="address" name="address" type="text"
+                                                autocomplete="off" required="required">
+                                            <input class="form-control mt-3" id="address" name="address" type="text"
+                                                autocomplete="off" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label>City *</label>
+                                            <input type="text" class="form-control" formControlName="city"
+                                                placeholder="Enter city">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label>State *</label>
+                                            <input type="text" class="form-control" formControlName="state"
+                                                placeholder="Enter state">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label>Country *</label>
+                                            <!-- <input type="text" class="form-control" formControlName="country"
+                                                placeholder="Enter Country"> -->
+                                            <div class="custom-select-wrapper">
+
+
+                                                <select class="form-control custom-select">
+
+                                                    <option value="">
+                                                        Select Country
+                                                    </option>
+
+                                                    <option value="UK">
+                                                        UK
+                                                    </option>
+
+                                                    <option value="India">
+                                                        India
+                                                    </option>
+
+                                                    <option value="USA">
+                                                        USA
+                                                    </option>
+
+
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <label>Post Code *</label>
+                                            <input type="text" class="form-control" formControlName="postcode"
+                                                placeholder="Enter Post Code">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-12">
+                                    <div class="form-group donation-group">
+                                        <div class="field-inner">
+                                            <div class="thumb">
+                                                <i class="fa fa-solid fa-dollar-sign"></i>
+                                            </div>
+                                            <label for="donation">Choose Donation Amount (£) *</label>
+                                            <input class="form-control" id="donation" name="donation" type="text"
+                                                placeholder="Donation Here" autocomplete="off" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="made-amount">
+                                        <span class="donation-amount">20</span>
+                                        <span class="donation-amount">50</span>
+                                        <span class="donation-amount active">100</span>
+                                        <span class="donation-amount">200</span>
+                                        <span class="donation-amount custom-amount">Custom</span>
+                                    </div>
+                                </div> -->
+
+
+                                <!-- Donation Amount -->
+                                <div class="col-12">
+                                    <div class="form-group donation-group">
+                                        <label class="form-label">
+                                            Choose Donation Amount (£) <span class="text-danger">*</span>
+                                        </label>
+
+                                        <!-- <div class="donation-options">
+                                            <label class="amount-box" *ngFor="let amount of donationAmounts">
+                                                <input type="radio" name="donationAmount"
+                                                    [checked]="selectedAmount === amount"
+                                                    (change)="selectAmount(amount)" />
+                                                {{ amount }}
+                                            </label>
+
+                                            <label class="amount-box" [class.active]="selectedAmount === 'Custom'">
+                                                <input type="radio" name="donationAmount"
+                                                    [checked]="selectedAmount === 'Custom'"
+                                                    (change)="selectAmount('Custom')" />
+                                                Custom
+                                            </label>
+                                        </div> -->
+                                        <div class="donation-options">
+                                            <label class="amount-box" *ngFor="let amount of donationAmounts"
+                                                [class.active]="selectedAmount === amount">
+
+                                                <input type="radio" name="donationAmount"
+                                                    (change)="selectAmount(amount)">
+                                                {{ amount }}
+                                            </label>
+
+                                            <label class="amount-box" [class.active]="selectedAmount === 'Custom'">
+
+                                                <input type="radio" name="donationAmount"
+                                                    (change)="selectAmount('Custom')">
+                                                Custom
+                                            </label>
+                                        </div>
+
+                                        <!-- Show only when Custom selected -->
+                                        <div class="field-inner mt-4" *ngIf="selectedAmount === 'Custom'">
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-pound-sign"></i>
+                                                </span>
+
+                                                <input type="number" class="form-control"
+                                                    placeholder="Enter Custom Amount" formControlName="donationAmount">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Frequency -->
+                                <div class="col-12 mt-4">
+                                    <label class="form-label">
+                                        Frequency <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="donation-options">
+
+                                        <label class="amount-box">
+                                            <input type="radio" value="One-Time" formControlName="frequency" />
+                                            One-Time
+                                        </label>
+
+                                        <label class="amount-box"
+                                            [class.active]="donationForm.get('frequency')?.value === 'Monthly'">
+                                            <input type="radio" value="Monthly" formControlName="frequency" />
+                                            Monthly
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                                <!-- Credit Card -->
+                                <div class="col-12 mt-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Credit Card</label>
+
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-credit-card"></i>
+                                            </span>
+
+                                            <input type="text" class="form-control" placeholder="Card Number"
+                                                formControlName="cardNumber" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gift Aid -->
+                                <div class="col-12 mt-4">
+                                    <p>Claim Gift Aid on my donation</p>
+                                    <div class="form-check outreach-check">
+                                        <input class="form-check-input" type="checkbox" id="giftAid"
+                                            formControlName="giftAid" />
+
+                                        <label class="form-check-label" for="giftAid">
+                                            I am a UK taxpayer and I consent to claiming Gift Aid on my donation.
+                                        </label>
+                                    </div>
+                                    <a href="https://www.gov.uk/donating-to-charity/gift-aid"
+                                        class="text-decoration-none mt-3 text-primary">Read More</a>
+                                </div>
+
+                                <!-- Total -->
+                                <div class="col-12 mt-4">
+                                    <h5>Total</h5>
+                                    <h2 class="total-amount">
+                                        £{{ donationForm.get('donationAmount')?.value || 0 }}
+                                    </h2>
+                                </div>
+                                <div class="col-12">
+                                    <div class="donate-button-wapper mt-10">
+                                        <button type="submit" class="theme-button style-1" data-text="Submit Donation">
+                                            <span data-text="Submit Donation">Submit Donation</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- default-form end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- donate section end -->
+
+
+<app-footer></app-footer>

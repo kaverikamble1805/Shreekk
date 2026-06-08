@@ -1,0 +1,283 @@
+<app-navbar></app-navbar>
+
+<section class="breadcrumb-section">
+    <!-- breadcrumb wapper start -->
+    <div class="breadcrumb-wapper" style="background-image: url('assets/background/durga.jpg');">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <div class="col-lg-12">
+                    <!-- breadcrumb content start -->
+                    <div class="breadcrumb-content">
+                        <!-- breadcrumb title start -->
+                        <div class="breadcrumb-title">
+                            <h1>Events</h1>
+                        </div>
+                        <!-- breadcrumb title end -->
+                        <!-- nav start -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Events</li>
+                            </ol>
+                        </nav>
+                        <!-- nav end -->
+                    </div>
+                    <!-- breadcrumb content end -->
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb shape bottom start -->
+        <div class="breadcrumb-shape-bottom">
+            <figure>
+
+                <img src="assets/shape/shape.png" alt="breadcrumb shape">
+            </figure>
+        </div>
+        <!-- breadcrumb shape bottom end -->
+    </div>
+    <!-- breadcrumb wapper end -->
+</section>
+
+<section class="campaigns-section-1">
+
+    <div class="event-wapper pt-100 md-pt-80 pb-100 md-pb-80">
+        <div class="container">
+
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="section-title text-center mb-5 fade-up">
+                        <span class="sub-title">Upcoming Events</span>
+
+                        <h2>
+                            Spiritual Events & Temple Activities
+                        </h2>
+
+                        <p>
+                            Join our upcoming devotional programs, festival celebrations,
+                            pooja ceremonies, and community events at Shree Shakti Mandir UK.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-4 col-md-6" *ngFor="let item of events">
+
+                    <div class="card-event">
+                        <!-- Image -->
+                        <div class="image-event">
+                            <img [src]="item.image" [alt]="item.title" class="img-fluid">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="event-content">
+
+                            <span class="event-category">
+                                {{ item.category }}
+                            </span>
+
+                            <h3>
+                                {{ item.title }}
+                            </h3>
+
+                            <p>
+                                {{ item.description }}
+                            </p>
+
+                            <!-- Details -->
+                            <ul class="event-info">
+                                <li>
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    {{ item.date }}
+                                </li>
+
+                                <!-- <li>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    {{ item.month }}
+                                </li> -->
+                                <li>
+                                    <i class="fa-regular fa-clock"></i>
+                                    {{ item.time }}
+                                </li>
+                            </ul>
+                            <ul class="event-info m-0">
+
+
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>Main Entrance : <br> {{ item.location }}</p>
+                                </li>
+
+                            </ul>
+
+                            <!-- Button -->
+                            <div class="campaigns-button-wapper">
+                                <a [routerLink]="['/event-details', item.slug]" class="theme-button style-1">
+
+                                    <span data-text="View Details">
+                                        {{ item.button }}
+                                    </span>
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="campaigns-wapper md-pt-80 pb-100 md-pb-80">
+        <div class="container">
+            <div class="section-title mb-2 text-center fade-up">
+
+                <span class="sub-title">
+                    Past Celebrations
+                </span>
+
+                <h2 class="mb-0">
+                    Divine Memories & Temple Celebrations
+                </h2>
+
+                <p>
+                    Relive the spiritual joy, devotional gatherings,
+                    bhajans, pooja ceremonies, and sacred celebrations
+                    held at Shree Shakti Mandir with devotees and families.
+                </p>
+
+            </div>
+            <!-- <div class="row g-4 pt-5 fade-up">
+
+                <div class="col-lg-4 col-md-6" *ngFor="let item of pastEvents">
+
+                    <div class="card-event">
+
+                        <div class="image-event">
+
+                            <img [src]="item.image" [alt]="item.title" class="img-fluid">
+
+                            <div class="event-overlay"></div>
+
+                            <div class="past-badge">
+                                Completed
+                            </div>
+
+                        </div>
+
+                        <div class="event-content">
+
+                            <span class="event-category mb-0">
+                                {{ item.category }}
+                            </span>
+
+                            <h3 class="mb-0">
+                                {{ item.title }}
+                            </h3>
+
+                            <p class="mb-0">
+                                {{ item.description }}
+                            </p>
+
+                            <ul class="event-info">
+
+                                <li>
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    {{ item.date }}
+                                </li>
+
+                                <li>
+                                    <i class="fa-regular fa-clock"></i>
+                                    {{ item.time }}
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div> -->
+
+            <div class="swiper pt-5 past-events-slider">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide" *ngFor="let item of pastEvents">
+
+                        <div class="card-event">
+
+                            <div class="image-event">
+
+                                <img [src]="item.image" [alt]="item.title" class="img-fluid">
+
+                                <div class="event-overlay"></div>
+
+                                <div class="past-badge">
+                                    Completed
+                                </div>
+
+                            </div>
+
+                            <div class="event-content">
+
+                                <span class="event-category">
+                                    {{ item.category }}
+                                </span>
+
+                                <h3>
+                                    {{ item.title }}
+                                </h3>
+
+                                <p>
+                                    {{ item.description }}
+                                </p>
+
+                                <ul class="event-info">
+
+                                    <li>
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                        {{ item.date }}
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-regular fa-clock"></i>
+                                        {{ item.time }}
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="swiper-pagination position-relative"></div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

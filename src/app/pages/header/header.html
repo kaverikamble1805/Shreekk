@@ -1,0 +1,166 @@
+<app-navbar></app-navbar>
+
+
+<!-- HERO SECTION START -->
+<section class="hero-section-1 hero-temple-section">
+    <div class="hero-slider">
+        <!-- <div class="hero-slider-container">
+            <div class="hero-slider-wrapper" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+                <div class="hero-slide" *ngFor="let slide of slides" [style.backgroundImage]="'url(' + slide + ')'">
+                </div>
+            </div>
+        </div> -->
+        <div class="hero-slider-container">
+            <!-- <div class="hero-slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex"
+                [style.background-image]="'url(' + slide + ')'" [ngClass]="{ 'first-slide': i === 0 }"
+                [style.backgroundImage]="'url(' + slide + ')'"> </div> -->
+            <div class="hero-slider-container">
+                <div class="hero-slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex"
+                    [style.background-image]="'url(' + slide + ')'">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="hero-slider">
+        <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex" [style.background-image]="'url(' + slide + ')'"> </div>
+    </div> -->
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+
+
+    <!-- Hero Content -->
+    <div class="container hero-content-wrapper">
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6">
+
+                <div class="hero-content">
+                    <span class="hero-tag">
+                        <!-- <i class="fa-solid fa-om"></i> -->
+                        Welcome To Shree Shakti Mandir
+                    </span>
+                    <h1>
+                        Divine Blessings <br>
+                        For Every Soul
+                    </h1>
+                    <p>
+                        Experience spirituality, devotion, peace and
+                        temple traditions with our sacred community.
+                    </p>
+
+                    <div class="hero-btns">
+
+                        <a routerLink="/contact" class="theme-btn border-btn">
+                            Contact Now
+                        </a>
+
+                        <a routerLink="/donate" class="theme-btn border-btn">
+                            Donate Now
+                        </a>
+
+
+                    </div>
+                    <div class="mt-3">
+                        <a [routerLink]="['/services-details', 'daily-aarti']" class="theme-btn border-btn">
+                            Join Daily Morning & Evening Aarti
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Slider Buttons -->
+    <!-- <button class="slider-btn prev-btn" (click)="prevSlide()">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+
+    <button class="slider-btn next-btn" (click)="nextSlide()">
+        <i class="fa-solid fa-angle-right"></i>
+    </button> -->
+
+    <!-- Bottom Shape -->
+    <div class="hero-wave">
+        <img src="assets/shape/shape.png" alt="">
+    </div>
+</section>
+<!-- HERO SECTION END -->
+
+<!-- about section start -->
+<section class="about-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- section title area start -->
+                <div class="section-title-area">
+                    <div class="section-title about-history text-center fade-left" data-wow-delay=".2s">
+                        <div class="icon m-auto">
+                            <figure>
+                                <img src="assets/icon/icon-about-sub-heading.png" alt="icon about sub heading">
+                            </figure>
+                        </div>
+                        <h2>Know The Real History of <br> Shree Shakti Mandir, Leicester UK</h2>
+                    </div>
+                </div>
+                <!-- section title area end -->
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="about-content">
+                    <p>
+                        Shree Shakti Mandir UK is a sacred center of devotion, spirituality, and Hindu
+                        culture where devotees come together to worship Maa Shakti and seek divine
+                        blessings. The temple has become a symbol of faith and unity for the Hindu community
+                        across the United Kingdom, preserving the rich traditions of Sanatan Dharma for
+                        future generations.
+                    </p>
+
+                    <div class="check-list">
+                        <ul>
+                            <li>Daily Aarti & Spiritual Prayer Ceremonies</li>
+                            <li>Grand Celebration of Navratri & Diwali Festivals</li>
+                            <li>Community Center & Service</li>
+                            <li>Charity Programs</li>
+                            <li>Teaching Hindu Culture & Spiritual Values</li>
+                            <li>Peaceful Place for Meditation & Devotion</li>
+                        </ul>
+                    </div>
+                    <!-- about footer start -->
+                    <!-- <div class="about-footer">
+                        <div class="about-button-wappper">
+                            <a href="#" class="theme-button style-1" aria-label="More About">
+                                <span data-text="More About">More About</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="about-contact-box">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="about-contact-box-content">
+                                <p>Call Now</p>
+                                <a href="tel:+44 7438357048">+44 7438357048</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- about footer end -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-images-box">
+                    <div class="about-year">
+                        <p>Established in <span>1975</span></p>
+                    </div>
+                    <figure class="image-anime">
+                        <img src="assets/about/about-one.png" alt="about one">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

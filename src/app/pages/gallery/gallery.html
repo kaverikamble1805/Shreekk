@@ -1,0 +1,199 @@
+<app-navbar></app-navbar>
+
+<section class="breadcrumb-section">
+    <!-- breadcrumb wapper start -->
+    <div class="breadcrumb-wapper" style="background-image: url('assets/background/durga.jpg');">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <div class="col-lg-12">
+                    <!-- breadcrumb content start -->
+                    <div class="breadcrumb-content">
+                        <!-- breadcrumb title start -->
+                        <div class="breadcrumb-title">
+                            <h1>Gallery</h1>
+                        </div>
+                        <!-- breadcrumb title end -->
+                        <!-- nav start -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+                            </ol>
+                        </nav>
+                        <!-- nav end -->
+                    </div>
+                    <!-- breadcrumb content end -->
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb shape bottom start -->
+        <div class="breadcrumb-shape-bottom">
+            <figure>
+
+                <img src="assets/shape/shape.png" alt="breadcrumb shape">
+            </figure>
+        </div>
+        <!-- breadcrumb shape bottom end -->
+    </div>
+    <!-- breadcrumb wapper end -->
+</section>
+
+
+<div class="gallery-section pt-100 md-pt-80 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6" *ngFor="let item of paginatedImages">
+
+                <div class="photo-gallery">
+
+                    <div class="photo-gallery-image">
+
+                        <figure class="image-anime">
+
+                            <img [src]="item.image" [alt]="item.alt">
+
+                        </figure>
+
+                    </div>
+
+                    <!-- Popup Icon -->
+                    <div class="photo-gallery-icon">
+
+                        <a class="photo-popup" (click)="openImage(item.image)">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- pagination start -->
+                <!-- <div class="pagination justify-content-center mt-0">
+                    <nav aria-label="page navigation">
+                        <ul class="page-list">
+                            <li><a aria-current="page" class="page-numbers current" href="#">1</a></li>
+                            <li><a class="page-numbers" href="#">2</a></li>
+                            <li><a class="next page-numbers" href="#">Next Page</a></li>
+                        </ul>
+                    </nav>
+                </div> -->
+
+                <div class="pagination justify-content-center mt-0">
+
+                    <nav aria-label="page navigation">
+
+                        <ul class="page-list">
+
+                            <!-- Prev -->
+                            <li>
+
+                                <a href="javascript:void(0)" class="next page-numbers" (click)="prevPage()"
+                                    [class.disabled]="currentPage === 1">
+
+                                    Prev
+
+                                </a>
+
+                            </li>
+
+                            <!-- Numbers -->
+                            <li *ngFor="let page of [].constructor(totalPages); let i = index">
+
+                                <a href="javascript:void(0)" class="page-numbers"
+                                    [class.current]="currentPage === i + 1" (click)="changePage(i + 1)">
+
+                                    {{ i + 1 }}
+
+                                </a>
+
+                            </li>
+
+                            <!-- Next -->
+                            <li>
+
+                                <a href="javascript:void(0)" class="next page-numbers" (click)="nextPage()"
+                                    [class.disabled]="currentPage === totalPages">
+
+                                    Next
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+                <!-- pagination end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- gallery section end -->
+
+<!-- cta section start -->
+<section class="cta-section-2 pb-100 md-pb-80">
+    <div class="container">
+        <div class="cta-wapper" style="background-image: url(assets/background/bg-cta-2.jpg);">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8">
+                    <div class="cta-content text-center">
+                        <!-- section title start -->
+                        <div class="section-title wow fade-up" data-wow-delay=".2s">
+                            <h2>Proud to be serving thousands of Families around the World</h2>
+                        </div>
+                        <!-- section title end -->
+                        <div class="cta-button wow fade-up" data-wow-delay=".3s">
+                            <a routerLink="/contact" class="theme-button style-1" aria-label="Get In Touch">
+                                <span data-text="Get In Touch">Get In Touch</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<app-footer></app-footer>
+
+<!-- Image Popup Modal -->
+
+<div class="custom-image-modal" *ngIf="selectedImage">
+
+    <span class="close-btn" (click)="closeImage()">
+        &times;
+    </span>
+
+    <button class="nav-btn prev-btn" (click)="prevImage()">
+        &#10094;
+    </button>
+
+    <img [src]="selectedImage" class="popup-image">
+
+    <button class="nav-btn next-btn" (click)="nextImage()">
+        &#10095;
+    </button>
+    <div class="image-counter">
+
+        {{ currentImageIndex + 1 }}
+        /
+        {{ galleryImages.length }}
+
+    </div>
+</div>

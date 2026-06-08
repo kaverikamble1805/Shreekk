@@ -1,0 +1,198 @@
+<app-navbar></app-navbar>
+
+<section class="breadcrumb-section">
+    <!-- breadcrumb wapper start -->
+    <div class="breadcrumb-wapper" style="background-image: url('assets/background/durga.jpg');">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <div class="col-lg-12">
+                    <!-- breadcrumb content start -->
+                    <div class="breadcrumb-content">
+                        <!-- breadcrumb title start -->
+                        <div class="breadcrumb-title">
+                            <h1>Event Details</h1>
+                        </div>
+                        <!-- breadcrumb title end -->
+                        <!-- nav start -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Event Details</li>
+                            </ol>
+                        </nav>
+                        <!-- nav end -->
+                    </div>
+                    <!-- breadcrumb content end -->
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb shape bottom start -->
+        <div class="breadcrumb-shape-bottom">
+            <figure>
+
+                <img src="assets/shape/shape.png" alt="breadcrumb shape">
+            </figure>
+        </div>
+        <!-- breadcrumb shape bottom end -->
+    </div>
+    <!-- breadcrumb wapper end -->
+</section>
+
+
+<section class="campaigns-section-1">
+
+    <div class="event-wapper pt-100 md-pt-80 md-pb-80">
+        <div class="container">
+
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="section-title text-center mb-5 fade-up">
+                        <span class="sub-title">Upcoming Events</span>
+
+                        <h2>
+                            Spiritual Events & Temple Activities
+                        </h2>
+
+                        <p>
+                            Join our upcoming devotional programs, festival celebrations,
+                            pooja ceremonies, and community events at Shree Shakti Mandir UK.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-details-section pb-100">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <!-- Content -->
+            <div class="col-lg-8">
+
+                <div class="event-details-content">
+
+                    <span class="event-category">
+                        {{ eventData?.category }}
+                    </span>
+
+                    <h2>
+                        {{ eventData?.title }}
+                    </h2>
+
+                    <p class="event-description">
+                        {{ eventData?.description }}
+                    </p>
+                    <div class="text-center">
+                        <img [src]="eventData?.banner" [alt]="eventData?.title" class="img-fluid" height="400px">
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="event-highlights">
+
+                        <h3>
+                            Event Highlights
+                        </h3>
+
+                        <ul>
+
+                            <li *ngFor="let item of eventData?.highlights">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                {{ item }}
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Schedule -->
+                    <div class="event-schedule">
+
+                        <h3>
+                            Programme Schedule
+                        </h3>
+
+                        <div class="schedule-item" *ngFor="let item of eventData?.schedule">
+
+                            <h5>
+                                {{ item.activity || item.day }}
+                            </h5>
+
+                            <span>
+                                {{ item.timing }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+
+                <div class="event-sidebar">
+
+                    <h4>
+                        Event Information
+                    </h4>
+
+                    <ul class="event-info">
+
+                        <li>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            {{ eventData?.date }}
+                        </li>
+
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            {{ eventData?.time }}
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Main Entrance : <br> {{ eventData?.location }}</p>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-microphone"></i>
+                            {{ eventData?.speaker }}
+                        </li>
+
+                    </ul>
+
+                    <!-- Buttons -->
+                    <!-- <div class="event-buttons">
+
+                        <a [routerLink]="['/contact']" class="theme-button style-1"> <span data-text="Enquiry Now">
+                                Enquiry Now </span> </a> <a [routerLink]="['/donate']"
+                            class="theme-button style-2"> <span data-text="Donate Now"> Donate Now </span> </a>
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<app-footer></app-footer>

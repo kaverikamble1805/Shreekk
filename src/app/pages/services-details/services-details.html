@@ -1,0 +1,540 @@
+<app-navbar></app-navbar>
+<section class="breadcrumb-section">
+    <!-- breadcrumb wapper start -->
+    <div class="breadcrumb-wapper" style="background-image: url(assets/background/durga.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- breadcrumb content start -->
+                    <div class="breadcrumb-content">
+                        <!-- breadcrumb title start -->
+                        <div class="breadcrumb-title">
+                            <h1>Services Details</h1>
+                        </div>
+                        <!-- breadcrumb title end -->
+                        <!-- nav start -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Services Details</li>
+                            </ol>
+                        </nav>
+                        <!-- nav end -->
+                    </div>
+                    <!-- breadcrumb content end -->
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb-shape-bottom">
+            <figure>
+                <img src="assets/shape/shape.png" alt="breadcrumb shape">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="service-details-section pt-120 pb-120">
+    <div class="container">
+        <div class="section-title text-center fade-up"> <span class="sub-title"> Divine Temple Services </span>
+            <h2> Sacred Services & Spiritual Blessings </h2>
+            <p> Shree Shakti Mandir offers divine spiritual services, sacred rituals, poojas, community gatherings, and
+                devotional experiences that bring peace, positivity, blessings, and spiritual harmony. </p>
+        </div>
+        <div class="service-details-wrapper">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="custom-slider" *ngIf="serviceData?.gallery?.length">
+
+                        <div class="slider-track" [style.transform]="'translateX(-' + currentImageIndex * 100 + '%)'">
+
+                            <img *ngFor="let img of serviceData?.gallery" [src]="img" class="slider-image"
+                                alt="service image" (click)="openImage(img)">
+
+                        </div>
+
+                        <button class="slider-btn prev" (click)="prevImage()">
+                            ❮
+                        </button>
+
+                        <button class="slider-btn next" (click)="nextImage()">
+                            ❯
+                        </button>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="details-content"> <span class="service-tag"> {{ serviceData.tag }} </span>
+                        <h2> {{ serviceData.title }} </h2>
+                        <p> {{ serviceData.desc }} </p>
+
+                        <div class="price-wrapper">
+
+                            <div class="price-card" *ngIf="serviceId == 'yagna-havan'">
+
+                                <h3>
+                                    Starting Charges
+                                </h3>
+
+                                <h4>
+                                    {{ serviceData.day }}
+                                </h4>
+
+                            </div>
+
+                            <!-- DINING HALL -->
+
+                            <div class="price-card" *ngIf="serviceId == 'dining-hall'">
+
+                                <h6>
+                                    Hall Rent
+                                </h6>
+
+                                <h4>
+                                    <h3>Starts from</h3>
+                                    {{ serviceData.hallRent }} <br>
+                                    <h3>Per Hour</h3>
+                                </h4>
+
+                            </div>
+
+                            <div class="price-card" *ngIf="serviceId == 'dining-hall'">
+
+                                <h6>
+                                    Food Charges
+                                </h6>
+
+                                <h4>
+                                    <h3>Minimum 50 People Order</h3>
+                                    {{ serviceData.foodCharges }} <br>
+                                    <h3>Per Plate</h3>
+                                </h4>
+
+                            </div>
+                            <div class="price-card" *ngIf="serviceId == 'prasad-seva'">
+
+                                <h3>
+                                    Seva Contribution
+                                </h3>
+
+                                <h4>
+                                    Donation Based
+                                </h4>
+
+                            </div>
+
+                        </div>
+                        <h3 class="text-danger mb-3">Suitable For :</h3>
+                        <div class="facility-list">
+
+
+                            <div class="facility-item" *ngFor="let item of serviceData.facilities">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                {{ item }}
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-extra-box" *ngIf="serviceId == 'yagna-havan'">
+                            <h3>
+                                Sacred Yagna & Havan
+                            </h3>
+                            <div class="yagna-grid">
+
+                                <div class="yagna-item">
+                                    Ganesh Yagna
+                                </div>
+
+                                <div class="yagna-item">
+                                    Navgraha Shanti Yagna
+                                </div>
+
+
+                                <div class="yagna-item">
+                                    Maa Baglamukhi Havan
+                                </div>
+                                <div class="yagna-item">
+                                    Durga Havan
+                                </div>
+
+                                <div class="yagna-item">
+                                    Grah Shanti Pooja
+                                </div>
+
+                                <div class="yagna-item">
+                                    Pitru Havan
+                                </div>
+                                <div class="yagna-item">
+                                    Maha Mrityunjaya Havan
+                                </div>
+                            </div>
+                            <div class="extra-time mt-3">
+
+                                <span>
+                                    Ritual Timing :
+                                </span>
+
+                                {{ serviceData.ritualTime }}
+
+                            </div>
+                        </div>
+
+                        <div class="service-extra-box" *ngIf="serviceId == 'dining-hall'">
+                            <h3>
+                                Hall Information
+                            </h3>
+                            <ul>
+                                <li>
+                                    <strong>Seating Capacity :</strong>
+                                    {{ serviceData.capacity }}
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                        <div class="service-extra-box" *ngIf="serviceId == 'marriage-ceremony'">
+
+                            <h3>
+                                Wedding Facilities
+                            </h3>
+
+                            <div class="yagna-grid">
+
+                                <div class="yagna-item">
+                                    Guest Capacity : <br>
+                                    {{ serviceData.guestCapacity }}
+                                </div>
+                                <div class="yagna-item">
+                                    Traditional Vedic Rituals
+                                </div>
+                                <div class="yagna-item">
+                                    Mandap Decoration
+                                </div>
+                                <div class="yagna-item">
+                                    Music & Bhajans
+                                </div>
+                                <div class="yagna-item">
+                                    Dining Arrangement
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="extra-time mt-3" *ngIf="serviceId == 'marriage-ceremony'">
+
+                            <span>
+                                Exclusions :
+                            </span>
+
+
+                            Traditional Attire, Pandit Ji Booking,
+                            Music & Bhajans, Dining Arrangements and Decoration.
+
+                        </div>
+
+
+
+                        <div class="service-extra-box" *ngIf="serviceId == 'prasad-seva'">
+
+                            <h3>
+                                Prasad Seva Details
+                            </h3>
+
+                            <div class="yagna-grid">
+
+                                <div class="yagna-item">
+                                    Daily Prasad Distribution
+                                </div>
+                                <div class="yagna-item">
+                                    Festival Food Seva
+                                </div>
+                                <div class="yagna-item">
+                                    Devotional Community Meals
+                                </div>
+                                <div class="yagna-item">
+                                    Fresh & Hygienic Preparation and Serve
+                                </div>
+                            </div>
+
+
+
+                            <div class="extra-time mt-3">
+
+                                <span>
+                                    Seva Timing :
+                                </span>
+
+                                {{ serviceData.sevaTime }}
+
+                            </div>
+
+                        </div>
+
+                        <a [routerLink]="['/contact']" [queryParams]="{
+      service: serviceData.title
+    }" class="theme-button style-1 mt-4">
+
+                            <span data-text="Enquire Now">
+                                Enquire Now
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="timings-table-wrapper" *ngIf="serviceId == 'daily-aarti'">
+
+                        <table class="timings-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Schedule</th>
+                                    <th>Summer</th>
+                                    <th>Winter</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        Temple Opening Time (Morning)
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.summerMorningOpen }}
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.winterMorningOpen }}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        Temple Opening Time (Evening)
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.summerEveningOpen }}
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.winterEveningOpen }}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        Daily Aarti (Morning)
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.dailyMorningAarti }}
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.dailyMorningAarti }}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        Daily Aarti (Evening)
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.dailyEveningAartiSummer }}
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.dailyEveningAartiWinter }}
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        Bhog Aarti
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.bhogAarti }}
+                                    </td>
+
+                                    <td>
+                                        {{ serviceData?.bhogAarti }}
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- <div class="bhog-seva-box" *ngIf="serviceId == 'daily-aarti'">
+
+                <h3>Offer Bhog Seva</h3>
+
+                <p>
+                    Bring peace and prosperity to your family by sponsoring the daily Bhog Aarti.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Contribution:</strong>
+                        From £21 onwards (as per your wish).
+                    </li>
+                </ul>
+
+                <div class="mt-4">
+                    <button class="theme-button style-1" (click)="supportBhogSeva()">
+
+                        <span>Support Bhog Seva</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+                </div>
+
+            </div> -->
+
+            <div class="bhog-seva-card" *ngIf="serviceId == 'daily-aarti'">
+
+
+                <h3>Offer Bhog Seva</h3>
+
+                <p>
+                    Bring peace and prosperity to your family by sponsoring the daily Bhog Aarti.
+                </p>
+
+                <div class="contribution-box">
+                    <span>Contribution</span>
+                    <h4>From £21 onwards</h4>
+                    <small>(as per your wish)</small>
+                </div>
+
+                <button class="theme-button style-1 mt-4" (click)="supportBhogSeva()">
+
+                    <span data-text="Support Bhog Seva">Support Bhog Seva</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="campaigns-section-1 background-one" *ngIf="serviceId === 'festival-celebrations'">
+    <!-- campaigns shape top -->
+    <div class="campaigns-shape-top">
+        <figure>
+            <img src="assets/home/shape-bottom.png" alt="campaigns shape bottom">
+        </figure>
+    </div>
+    <div class="campaigns-wapper pt-100 md-pt-80 pb-100 md-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center fade-up" data-wow-delay=".2s">
+                    <span class="sub-title">Festival Calendar 2026</span>
+
+                    <h2>Divine Festivals & Sacred Celebrations 2026</h2>
+                    <p>
+                        Experience divine festivals, spiritual celebrations,
+                        bhajans, aartis, and sacred temple events throughout
+                        the year 2026 at Shree Shakti Mandir.
+                    </p>
+                </div>
+            </div>
+
+            <div class="calendar-slider-wrapper">
+
+                <button class="nav-btn prev-btn" (click)="prevSlide()">
+                    ❮
+                </button>
+
+                <div class="calendar-slider">
+
+                    <div class="calendar-card" *ngFor="let month of visibleMonths">
+
+                        <div class="month-header">
+                            {{ month.month }}
+                        </div>
+
+                        <!-- <div class="festival-row" *ngFor="let festival of month.festivals"> -->
+                        <div class="festival-row" *ngFor="let festival of month.festivals"
+                            [class.today-festival]="isToday(festival.date)">
+                            <div class="festival-name">
+
+                                <h4>{{ festival.title }}</h4>
+
+                                <span>{{ festival.hindi }}</span>
+
+                            </div>
+
+                            <div class="festival-date">
+                                {{ festival.date }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="nav-btn next-btn" (click)="nextSlide()">
+                    ❯
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- <button (click)="testNotification()">
+    Test Festival Notification
+</button> -->
+
+<!-- IMAGE MODAL -->
+
+<div class="service-image-modal" *ngIf="showImageModal">
+    <div class="modal-content-wrapper">
+        <span class="close-modal" (click)="closeImage()">
+            ✕
+        </span>
+
+        <button class="slider-btn prev" (click)="prevModalImage()">
+            ❮
+        </button>
+        <img [src]="selectedImage" class="modal-image">
+        <button class="slider-btn next" (click)="nextModalImage()">
+            ❯
+        </button>
+    </div>
+</div>
+<app-footer></app-footer>
